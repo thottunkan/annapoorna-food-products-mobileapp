@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "801980721867",
+    "project_id": "annapoorna-50aaa",
+    "storage_bucket": "annapoorna-50aaa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:801980721867:android:6026f530f9f9b90175c94e",
+        "android_client_info": {
+          "package_name": "com.example.testapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "801980721867-onirsmg16tmt4mk2lkals6bid5gu84ni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgSpugistg6YVLDAZO-a36Ti1S7MXChEc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "801980721867-onirsmg16tmt4mk2lkals6bid5gu84ni.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
