@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:testapp/login_page.dart';
+import 'package:testapp/product_info.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:firebase_core/firebase_core.dart';
 // import 'package:google_sign_in/google_sign_in.dart';
+import 'prfile_screen.dart';
+import 'cust_orders_screen.dart';
 import 'user.dart';
+import 'google_sign_in.dart';
 
 class FirstScreen extends StatelessWidget {
   final CurUser? user;
@@ -11,7 +16,7 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.orange.shade200,
+      backgroundColor: Colors.orange.shade50,
       appBar: AppBar(
         title: Text("annapoorna"),
         actions: [
@@ -28,21 +33,44 @@ class FirstScreen extends StatelessWidget {
                 ),
               ),
               PopupMenuItem<int>(
-                value: 0,
+                value: 1,
                 child: Text(
                   "Your Orders",
                   style: TextStyle(color: Colors.black),
                 ),
               ),
               PopupMenuItem<int>(
-                value: 0,
+                value: 2,
                 child: Text(
                   "SignOut",
                   style: TextStyle(color: Colors.black),
                 ),
               ),
             ],
-            onSelected: (item) => {print(item)},
+            onSelected: (item) => {
+              if (item == 0)
+                {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) {
+                    return ProfileScreem();
+                  }))
+                }
+              else if (item == 1)
+                {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) {
+                    return CustOrdersScreen();
+                  }))
+                }
+              else if (item == 2)
+                {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) {
+                    GoogleSigninProvider().firebaseSignOut();
+                    return LoginPage();
+                  }))
+                }
+            },
           ),
         ],
       ),
@@ -90,7 +118,12 @@ class FirstScreen extends StatelessWidget {
                   children: [
                     ElevatedButton(
                       onPressed: () {
-                        // Perform some action
+                        Navigator.of(context)
+                            .push(MaterialPageRoute(builder: (context) {
+                          return Product(
+                            producturl: "img/rice.jpg",
+                          );
+                        }));
                       },
                       child: const Text('ORDER NOW'),
                     ),
