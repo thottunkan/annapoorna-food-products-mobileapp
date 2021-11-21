@@ -9,6 +9,9 @@ class Product extends StatefulWidget {
 }
 
 class _ProductState extends State<Product> {
+  var ricePrice = 26;
+  var wheatPrice = 26;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +34,7 @@ class _ProductState extends State<Product> {
                   Container(
                     padding: EdgeInsets.only(left: 20),
                     child: Text(
-                      'Rs 26/-',
+                      'Rs 26',
                       style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
